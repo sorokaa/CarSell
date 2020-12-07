@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/assets/js/main.js}"></script>
+</head>
+<body>
+    <div class="header" th:fragment="header">
+        <button id="toTop" onclick="topFunction()">Click me</button>
+        <div class="inner-header">
+            <div class="logo-container">
+                <a th:href="@{/greeting}"><h1>Car Sell</h1></a>
+            </div>
+        </div>
+        <div class="links">
+            <ul class="links-ul">
+                <li class="link"><a th:href="@{/login}">Login</a></li>
+                <li class="link"><a th:href="@{/help}">Help</a></li>
+                <li class="link"><a th:href="@{/out}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer" th:fragment="footer">
+        <div class="contacts">
+            <ul>
+                <li><b>Phone:</b> +380 63 209 4526</li>
+                <li><b>Email:</b> <a href="mailto:sasha20999@outlook.com">sasha20999@outlook.com</a></li>
+                <li><b>Other:</b> fuck you</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+.faq-block {
+	padding: 0;
+	margin: 0;
+}
+
+.block {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.faq-question {
+	margin: 0;
+}
+
+.faq-answer {
+	border-bottom: 2px solid black;
+}
+
+.inner-enter-block {
+	padding-bottom: 25px;
+}
+
+.inner-enter-number {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.inner-enter-number p {
+	text-align: center;
+}
+
+.inner-enter-number input {
+	float: left;
+}
+
+.inner-enter-number button {
+	overflow: hidden;
+	border-radius: 0;
+	height: 21px; 
+	padding: 0;
+}
