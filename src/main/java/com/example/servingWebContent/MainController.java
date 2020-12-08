@@ -27,9 +27,12 @@ public class MainController {
     }
 
     @GetMapping("/logout")
-    public String logout() { return "logout"; }
+    public String logout() {
+        return "logout";
+    }
 
     @GetMapping("/readMore")
-    public String readMore() { return "readMore"; }
+    public String readMore() {
+        return "readMore"; }
 
 }

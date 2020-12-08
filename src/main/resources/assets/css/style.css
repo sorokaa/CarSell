@@ -5,7 +5,7 @@ body {
 	list-style: none;
 	text-decoration: none;
 	background-color: #c9d1c8;
-	font-family: sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .main-part {
@@ -33,11 +33,16 @@ body {
 }
 
 .welcome-homepage {
+	
+	border-top: 3px solid #c9d1c8;
+	border-bottom: 3px solid #c9d1c8;
+
 	align-self: center;
-	font-size: 30px;
+	font-size: 40px;
+	letter-spacing: 5px;
 	text-align: center;
 	margin: 0;
-	padding: 20px;
+	padding: 30px 20px;
 }
 
 p {
@@ -46,11 +51,15 @@ p {
 }
 
 .text {
-	width: 50%;
+	width: 40%;
+	padding-top: 0;
+	margin-top: 0;
+
 }
 
 .text p {
 	padding-top: 0;
+	margin-top: 0;
 	padding-left: 20px;
 }
 
@@ -86,13 +95,12 @@ button:hover {
 }
 
 .photo {
-	width: 30%;
+	width: 60%;
 	display: flex;
 }
 
 .photo img {
-	
-	width: 550px;
+	width: 95%;
 	height: auto;
 }
 
