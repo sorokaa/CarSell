@@ -5,8 +5,7 @@
 }
 
 .block {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 30px;
 }
 
 .faq-question {
@@ -17,6 +16,11 @@
 	border-bottom: 2px solid black;
 }
 
+.input-number {
+	margin: 0 auto;
+	text-align: center;
+}
+
 .inner-enter-block {
 	padding-bottom: 25px;
 }
@@ -24,6 +28,7 @@
 .inner-enter-number {
 	width: 300px;
 	margin: 0 auto;
+	padding-bottom: 30px;
 }
 
 .inner-enter-number p {
