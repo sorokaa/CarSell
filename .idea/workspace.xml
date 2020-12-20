@@ -40,6 +40,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\CarSell\CarSell\src\main\resources\static\css" />
       <recent name="C:\Users\User\Desktop\CarSell\src\main\resources\assets\css" />
       <recent name="C:\Users\User\Desktop\CarSell\src\main\resources\assets" />
       <recent name="C:\Users\User\Desktop\CarSell\src\main\resources\templates" />
@@ -59,7 +60,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.example.servingWebContent.ServingWebContent" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
       <module name="CarSell" />
       <method v="2">
         <option name="Make" enabled="true" />
