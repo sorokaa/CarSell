@@ -33,6 +33,10 @@ body {
 	color: #c9d1c8;
 }
 
+.account-register-link {
+	font-size: 12px;
+}
+
 .textbox {
 	width: 97%;
 	overflow: hidden;
