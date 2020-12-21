@@ -12,22 +12,31 @@
 <body>
 
 	<div th:insert="~{pagetemplate :: header}"></div>
+    
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
 
-	<div class="main-part">
+	<form th:action="@{/login}" method="post" class="login-box">
 		<div class="login-box">
 
 			<h1>Login</h1>
 
 			<div class="textbox">
-				<input type="text" placeholder="Login">
+				<input type="text" autocomplete="off" name="email" placeholder="Email">
 			</div>
 
 			<div class="textbox">
-				<input type="Password" placeholder="Password">
+				<input type="Password" autocomplete="off" name="password" placeholder="Password">
 			</div>
-			<button type="submit" class="acceptButton">Sign In</button>
+			<div><input class="acceptButton" type="submit">Sign in</input></div>
+			
+			<div class="account-register-link">Don't have account? 
+				<a th:href="@{/registration}">Create</a>
+			</div>
+
 		</div>
-	</div>
+	</form>
 
 	<div th:insert="~{pagetemplate :: footer}"></div>
 
