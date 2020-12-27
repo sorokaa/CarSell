@@ -34,7 +34,16 @@ body {
 }
 
 .account-register-link {
+	margin: auto 0;
+}
+
+.account-register-link p, 
+.account-register-link a {
 	font-size: 12px;
+}
+
+.account-register-link p {
+	margin-left: 5px;
 }
 
 .textbox {
@@ -57,7 +66,7 @@ body {
 
 .acceptButton {
 	float: right;
-	margin-bottom: 5px;
+	margin: 0 auto;
 	margin-right:5px;
 	color: #c9d1c8;
 	text-transform: uppercase;

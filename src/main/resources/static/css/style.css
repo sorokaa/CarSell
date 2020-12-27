@@ -204,3 +204,12 @@ input {
   	border-radius: 10px;
   	font-size: 18px; 
 }
+
+@media (max-width: 1300px) { 
+	.photo {
+		display: none;
+	}
+	.text {
+		width: 100%;
+	}
+}

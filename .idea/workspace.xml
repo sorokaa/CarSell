@@ -58,14 +58,43 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Run">
+    <configuration name="Run v2.0" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
+      <module name="CarSell" />
+      <option name="VM_PARAMETERS" value="java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar target/remote-debugging-spring-boot-application.jar" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Run" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11.0.9" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.Application" />
       <module name="CarSell" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Remote" type="Remote">
+      <module name="CarSell" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8000" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8000" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Run" />
+      <item itemvalue="Application.Run v2.0" />
+      <item itemvalue="Remote.Remote" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -82,5 +111,6 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
 </project>
