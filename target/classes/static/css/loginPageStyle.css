@@ -33,6 +33,19 @@ body {
 	color: #c9d1c8;
 }
 
+.account-register-link {
+	margin: auto 0;
+}
+
+.account-register-link p, 
+.account-register-link a {
+	font-size: 12px;
+}
+
+.account-register-link p {
+	margin-left: 5px;
+}
+
 .textbox {
 	width: 97%;
 	overflow: hidden;
@@ -48,11 +61,12 @@ body {
 	background: none;
 	padding-left: 10px;
 	color: white;
+	cursor: text;
 }
 
 .acceptButton {
 	float: right;
-	margin-bottom: 5px;
+	margin: 0 auto;
 	margin-right:5px;
 	color: #c9d1c8;
 	text-transform: uppercase;

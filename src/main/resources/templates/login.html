@@ -1,33 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login page</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/loginPageStyle.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginPageStyle.css}"/>
+    <script th:src="@{/assets/js/main.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 
 	<div th:insert="~{pagetemplate :: header}"></div>
-
-	<div class="main-part">
+    
+	<form th:action="@{/login}" method="post" class="login-box">
+		
 		<div class="login-box">
-
+			
 			<h1>Login</h1>
 
+			<div th:if="${param.error}">
+                <div class="alert alert-danger">
+                	Invalid username and password.
+                </div>
+            </div>
+            <div th:if="${param.logout}">
+            	<div class="alert alert-info">
+                	You have been logged out.
+                </div>
+            </div>
+
 			<div class="textbox">
-				<input type="text" placeholder="Login">
+				<input type="text" autocomplete="off" required="true" autofocus="true" name="email" placeholder="Email">
 			</div>
 
 			<div class="textbox">
-				<input type="Password" placeholder="Password">
+				<input type="Password" autocomplete="off" name="password" required="true" placeholder="Password">
 			</div>
-			<a href="#"><button>Sign In</button></a>
+			
+			<div>
+				<input class="acceptButton" type="submit" value="Sign In" />
+			</div>
+
+			<div class="account-register-link">
+					<p>Don't have account? <a th:href="@{/registration}">Create</a></p> 
+			</div>
+
+			
 		</div>
-	</div>
+	</form>
 
 	<div th:insert="~{pagetemplate :: footer}"></div>
 
