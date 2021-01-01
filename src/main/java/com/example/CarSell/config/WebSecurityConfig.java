@@ -1,5 +1,4 @@
-package com.example.config;
-
+package com.example.CarSell.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -19,14 +18,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()
-                    .antMatchers("/", "/main",  "/registration", "/static/**").permitAll()
-                    .anyRequest().authenticated()
+                .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/success_login")
+                    .failureUrl("/registration")
                 .and()
-                    .formLogin()
-                    .loginPage("/login").permitAll()
-                .and()
-                    .logout().permitAll();
+                    .logout();
     }
 
     @Override
@@ -34,9 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .usersByUsernameQuery("select email, password, username from usr where email=?")
-                .authoritiesByUsernameQuery("select u.email, ur.roles " +
-                                            "from usr u inner join user_role ur on u.id = ur.user_id " +
-                                            "where u.email = ?");
+                .usersByUsernameQuery("select username, password, active from usr where username=?")
+                .authoritiesByUsernameQuery("select u.username, ur.roles from usr u inner join user_role ur on u.id = ur.user_id where u.username=?");
     }
 }

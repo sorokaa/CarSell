@@ -1,8 +1,8 @@
-package com.example.repository;
+package com.example.CarSell.repository;
 
-import com.example.domain.User;
+import com.example.CarSell.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByEmail(String email);
+    User findByUsername(String username);
 }

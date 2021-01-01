@@ -24,6 +24,7 @@
                 	Invalid username and password.
                 </div>
             </div>
+            
             <div th:if="${param.logout}">
             	<div class="alert alert-info">
                 	You have been logged out.
@@ -31,7 +32,7 @@
             </div>
 
 			<div class="textbox">
-				<input type="text" autocomplete="off" required="true" autofocus="true" name="email" placeholder="Email">
+				<input type="text" autocomplete="off" required="true" autofocus="true" name="username" placeholder="Username">
 			</div>
 
 			<div class="textbox">

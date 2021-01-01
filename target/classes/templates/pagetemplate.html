@@ -8,19 +8,19 @@
 </head>
 <body>
     <div class="header" th:fragment="header">
-        <button id="toTop" onclick="topFunction()">Click me</button>
-        <div class="inner-header">
-            <div class="logo-container">
-                <a th:href="@{/main}"><h1>Car Sell</h1></a>
+            <button id="toTop" onclick="topFunction()">Click me</button>
+            <div class="inner-header">
+                <div class="logo-container">
+                    <a th:href="@{/main}"><h1>Car Sell</h1></a>
+                </div>
             </div>
-        </div>
-        <div class="links">
-            <ul class="links-ul">
-                <li class="link"><a th:href="@{/login}">Login</a></li>
-                <li class="link"><a th:href="@{/help}">Help</a></li>
-                <li class="link"><a th:href="@{/}">Log out</a></li>
-            </ul>
-        </div>
+            <div class="links">
+                <ul class="links-ul">
+                    <li class="link"><a th:href="@{/login}">Login</a></li>
+                    <li class="link"><a th:href="@{/help}">Help</a></li>
+                    <li class="link"><a th:href="@{/}">Log out</a></li>
+                </ul>
+            </div>
     </div>
 
     <div class="footer" th:fragment="footer">

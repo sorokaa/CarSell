@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8"/>
@@ -16,7 +16,12 @@
 	<div th:insert="~{pagetemplate :: header}"></div>
 
 	<div class="main-part">
-		<h2 class="welcome-homepage">Welcome to our site</h2>
+		<h2 class="welcome-homepage">Welcome to our site,
+			<div sec:authorize="isAuthenticated()">
+				<span sec:authentication="name">Bob</span>
+				<span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+			</div>
+		</h2>
 		<div class="text-photo">
 			<div class="text">
 				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Veniam laboriosam recusandae saepe odit autem, esse fugit quis ut nihil maiores aliquam perferendis quam, iste totam, velit adipisci reprehenderit dolores natus hic, ad debitis. Voluptatibus provident eum vitae asperiores illum dolorum officia fugiat iste, nam, inventore explicabo? Repellat consequuntur mollitia obcaecati atque officiis, quas, dolore </p>
