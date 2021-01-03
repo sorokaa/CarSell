@@ -60,7 +60,7 @@
   </component>
   <component name="RunManager" selected="Application.Run">
     <configuration name="Run v2.0" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.Application" />
       <module name="CarSell" />
       <option name="VM_PARAMETERS" value="java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar target/remote-debugging-spring-boot-application.jar" />
       <method v="2">
@@ -70,7 +70,7 @@
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.9" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.Application" />
       <module name="CarSell" />
       <method v="2">
         <option name="Make" enabled="true" />
