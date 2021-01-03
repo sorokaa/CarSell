@@ -11,6 +11,7 @@ public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
+    //unused
     @RequestMapping("/success_login")
     public ModelAndView login_success() {
         logger.info("Successfuly login");

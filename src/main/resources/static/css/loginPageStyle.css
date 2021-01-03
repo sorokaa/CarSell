@@ -10,6 +10,10 @@ body {
     
 }
 
+.main-part {
+	background-color: transparent;
+}
+
 
 .login-box {
 	width: 280px;
@@ -37,11 +41,13 @@ body {
 
 .account-register-link p, 
 .account-register-link a {
-	font-size: 12px;
+	font-size: 13px;
+	flex-wrap: wrap;
 }
 
-.account-register-link p {
-	margin-left: 5px;
+.account-register-link {
+	text-align: center;
+	margin-top: 7%;
 }
 
 .textbox {
@@ -65,7 +71,6 @@ body {
 .acceptButton {
 	float: right;
 	margin: 0 auto;
-	margin-right:5px;
 	color: #c9d1c8;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -75,6 +80,9 @@ body {
 	display: inline-block;
 	border: none;
 	transition: all 0.4s ease 0s;
+	margin-right:10px;
+	margin-bottom:10px;
+
 }
 
 .acceptButton:hover {
