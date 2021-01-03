@@ -24,6 +24,7 @@
 	<div th:if="${message}">
 		User exist
 	</div>
+	<div class="main-part">
 	<form th:action="@{/registration}" method="post" class="login-box">
 		<div class="login-box">
 
@@ -39,6 +40,7 @@
 			<div><button class="acceptButton" type="submit">Register</button></div>
 		</div>
 	</form>
+</div>
 
 	<div th:insert="~{pagetemplate :: footer}"></div>
 

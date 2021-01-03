@@ -31,6 +31,7 @@ body {
 
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > .auth-item > a:hover,
 .navbar-custom .navbar-nav > li > a:focus {
     color: #2e8857;
 }
@@ -40,6 +41,7 @@ body {
     margin: 0 auto;
     background-color: #304040;
     color: white;
+    min-height: 900px;
 }
 
 button {
@@ -57,6 +59,15 @@ button {
 
 .row {
     margin: 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #2e8857;
 }
 
 button:hover {

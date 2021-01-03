@@ -23,25 +23,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                // this allows the root and resources to be available without logging in
-                .antMatchers("/", "/static/**").permitAll()
-                // any other type of request will need the credentials
-                .anyRequest().authenticated()
+        http
+                    .authorizeRequests()
+                    .antMatchers("/main", "/registration", "/static/**").permitAll()
+                    .anyRequest().authenticated()
                 .and()
-                // uses the custom login form
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/success-login") // redirect to home page
-                .failureUrl("/login?error") // redirect to error page
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/main")
+                    .failureUrl("/login?error").permitAll()
                 .and()
-                // logout and redirect to login page
-                .logout().    //logout configuration
-                logoutUrl("/logout").
-                logoutSuccessUrl("/login")
-        .and()
-        .csrf().disable();
+                    .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login")
+                .and()
+                    .csrf().disable();
     }
 
 
