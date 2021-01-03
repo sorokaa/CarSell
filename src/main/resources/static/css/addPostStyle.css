@@ -1,0 +1,44 @@
+.add-form {
+    width: 280px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	background-color: #304040;
+}
+
+.main-part {
+    min-height: 500px;
+}
+
+.submit-button {
+    float: right;
+	margin: 0 auto;
+	margin-right:5px;
+	color: #c9d1c8;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #04202c;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+    
+}
+
+input {
+    border: none;
+	outline: none;
+	background: none;
+	padding-left: 10px;
+	color: white;
+	cursor: text;
+    width: 97%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 2px 8px 2px;
+	margin: 8px 2px;
+	border-bottom: 1px solid #c9d1c8;
+}
