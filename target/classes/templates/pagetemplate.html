@@ -1,37 +1,78 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script th:src="@{/assets/js/main.js}"></script>
 </head>
-<body>
-    <div class="header" th:fragment="header">
-            <button id="toTop" onclick="topFunction()">Click me</button>
-            <div class="inner-header">
-                <div class="logo-container">
-                    <a th:href="@{/main}"><h1>Car Sell</h1></a>
-                </div>
-            </div>
-            <div class="links">
-                <ul class="links-ul">
-                    <li class="link"><a th:href="@{/login}">Login</a></li>
-                    <li class="link"><a th:href="@{/help}">Help</a></li>
-                    <li class="link"><a th:href="@{/}">Log out</a></li>
-                </ul>
-            </div>
-    </div>
 
-    <div class="footer" th:fragment="footer">
-        <div class="contacts">
-            <ul>
-                <li><b>Phone:</b> +380 63 209 4526</li>
-                <li><b>Email:</b> <a href="mailto:sasha20999@outlook.com">sasha20999@outlook.com</a></li>
-                <li><b>Other:</b> fuck you</li>
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-custom" th:fragment="header">
+        <a th:href="@{/main}" class="navbar-brand">CarSell</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/posting-page}">Cars</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/help}">Help</a>
+                </li>
+
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <form action="@{/logout}" method="post">
+                            <input type="submit" value="Sign out" />
+                        </form>
+                    </li>
+                </div>
+
             </ul>
         </div>
-    </div>
+    </nav>
 
+
+    <footer class="text-center text-lg-start footer">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-7">
+                    <h5 class="text-uppercase">Thank you</h5>
+                    <p>
+                        We are love you! If you want to contact with creator of site just use one of
+                        type of contact!
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <h5 class="text-uppercase">Contacts</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>Phone: +38(067)-384-6627</li>
+                        <li>Email: sasha20999@outlook.com</li>
+                        <li>Telegram: @z_0_0_0_0_0</li>
+                        <li>GitHub: <a href="https://github.com/sorokaa">CLICK</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            © 2020 Copyright: Soroka
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,39 +1,59 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Car Selling</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
+
     <script th:src="@{/static/assets/js/main.js}"></script>
+
+
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/mainStyle.css}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+    <div th:insert="~{pagetemplate :: header}"></div>
+    <div sec:authorize="isAuthenticated()">
+        Hello
+    </div>
+    <div class="main-part">
+        <div class="row">
+            <h2 class="col-md-12 welcome-page-head-text">Welcome to our site</h2>
+        </div>
+        <div class="row read-more-block">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12 col-md-12">
+                        <span class="welcome-page-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta laborum maiores optio quam tenetur libero maxime iure consequatur illo hic, quisquam, porro voluptas incidunt quis sapiente animi dolor, facere eligendi pariatur omnis. Impedit, sint explicabo. Impedit nostrum amet eveniet cum aperiam quod accusantium quae de
+                            bitis saepe cumque sed animi mollitia, minima quaerat molestias ducimus quasi perferendis nam voluptatem iste delectus blanditiis consectetur deleniti, quos voluptates. Optio libero eaque cumque quae! Ratione eaque laboriosam fuga sint, incidunt, facere, nihil id necessitatibus harum molestias repellat dolor eveniet.
+                        </span>
+                        <a th:href="@{/readMore}" class="float-right read-more-button"><button>Read more</button></a>
+                    </div>
+                    <div class="col-lg-8 col-sm-0 col-md-0 img-block">
+                        <img class="img-responsive welcome-page-img" th:src="@{/static/images/welcome-page-evo.jpg}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row body-text">
+            <p class="col-md-12"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum consequatur quod labore voluptate, quidem odio officiis reiciendis, minima impedit dolores deserunt reprehenderit assumenda ipsum voluptatum blanditiis accusamus, sunt obcaecati iure magni quis minus quasi eum tempora doloremque vitae? Quisquam voluptates vitae repellendus in perferendis eligendi, animi qui nostrum minus et, quibusdam doloribus, beatae minima veritatis aut nulla consectetur aperiam. Nihil nulla facilis eveniet fugit, quod esse dolores quo voluptate tempore voluptatum est sunt distinctio sequi aliquam ab ratione tenetur! Quo, rem. Exercitationem velit dolore obcaecati sint molestiae, ullam nam doloribus dolores laboriosam neque minima accusantium quia ab, voluptatem quaerat corrupti.</p>
+        </div>
+    </div>
 
-	<div th:insert="~{pagetemplate :: header}"></div>
-
-	<div class="main-part">
-		<h2 class="welcome-homepage">Welcome to our site</h2>
-		<div class="text-photo">
-			<div class="text">
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Veniam laboriosam recusandae saepe odit autem, esse fugit quis ut nihil maiores aliquam perferendis quam, iste totam, velit adipisci reprehenderit dolores natus hic, ad debitis. Voluptatibus provident eum vitae asperiores illum dolorum officia fugiat iste, nam, inventore explicabo? Repellat consequuntur mollitia obcaecati atque officiis, quas, dolore </p>
-
-				<a th:href="@{/readMore}"><button class="read-more-button">Read more</button></a>
-			</div>
-			<div class="photo">
-				<img src="https://cdna.artstation.com/p/assets/images/images/002/260/918/large/kal-yan-polischuk-evoet.jpg?1459448452" alt="">
-			</div>
-		</div>
-
-		<div class="body-text">
-			<p class="body-text-test">	Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum consequatur quod labore voluptate, quidem odio officiis reiciendis, minima impedit dolores deserunt reprehenderit assumenda ipsum voluptatum blanditiis accusamus, sunt obcaecati iure magni quis minus quasi eum tempora doloremque vitae? Quisquam voluptates vitae repellendus in perferendis eligendi, animi qui nostrum minus et, quibusdam doloribus, beatae minima veritatis aut nulla consectetur aperiam. Nihil nulla facilis eveniet fugit, quod esse dolores quo voluptate tempore voluptatum est sunt distinctio sequi aliquam ab ratione tenetur! Quo, rem. Exercitationem velit dolore obcaecati sint molestiae, ullam nam doloribus dolores laboriosam neque minima accusantium quia ab, voluptatem quaerat corrupti.</p>
-		</div>
-	</div>
-
-	<div th:insert="~{pagetemplate :: footer}"></div>
+    <div th:insert="~{pagetemplate :: footer}"></div>
 
 </body>
+
 </html>

@@ -1,0 +1,66 @@
+
+.body-text {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.body-text p {
+    padding: 40px;
+}
+
+.img-block {
+    padding-left: 0;
+}
+
+.welcome-page-img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome-page-head-text {
+    font-size: 40px;
+    letter-spacing: 5px;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.read-more-block {
+    padding: 40px;
+    margin: 0;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+.read-more-button {
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    padding: 20px 0 0 0;
+}
+
+.contacts {
+    width: 400px;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contacts li {
+    font-size: 20px;
+    padding-top: 10px;
+    border: none;
+    margin: 0;
+}
+
+
+@media (max-width: 1300px) {
+    img {
+        display: none;
+    }
+    .welcome-page-text {
+        width: 100%;
+    }
+}
