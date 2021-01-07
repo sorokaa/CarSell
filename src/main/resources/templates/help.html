@@ -1,74 +1,118 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Help</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/helpPageStyle.css}"/>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}"  type="image/x-icon">
-    
 
-    <script th:src="@{/assets/js/main.js}"></script>
+
+    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/helpPageStyle.css}" />
+
+    <script type="text/javascript" th:src="@{/static/js/help.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/chatbot.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
     <div th:insert="~{pagetemplate :: header}"></div>
     
-    <div class="main-part">
-        <div class="faq-block">
-            <div class="block">
-                <h2 class="faq-question">Why you create dat site?</h2>
-                <h3 class="faq-answer">I want to improve my skill in using Spring Framework!</h3>
-            </div>
-            <div class="block">
-                <h2 class="faq-question">It if final version of site?</h2>
-                <h3 class="faq-answer">No, i'll upgrade dat site step by step, time by time!</h3>
-            </div>
-            <div class="block">
-                <h2 class="faq-question">What you want to see on your site in future?</h2>
-                <h3 class="faq-answer">I want see this features:
-                    <ul>
-                        <li>Add new car post</li>
-                        <li>Registration on site and add persons to database</li>
-                    </ul>
-                </h3>
-            </div>
-            <div class="block">
-                <h2 class="faq-question">Why design of site so ugly?</h2>
-                <h3 class="faq-answer">Pretties than your mom)))</h3>
-            </div>
-            <div class="block">
-                <h2 class="faq-question">Some short answer?</h2>
-                <h3 class="faq-answer">Some very very very very very very very very very very very long answer!</h3>
-            </div>
-            <div class="block">
-                <h2 class="faq-question">Some short answer?</h2>
-                <h3 class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis magni, non. Maxime omnis exercitationem hic at vero ab laboriosam accusantium!</h3>
-            </div>
-        </div>
-        
-        <div class="enter-number-block">
-            <div class="inner-enter-number">
-                <p>Do you have another question?</p>
-                <p>Out operator call you and consult!</p>
-                <div class="input-number">
-                    <input type="text" placeholder="Your phone number">
-                    <button>Submit</button>
+    <button id="bot-button-toggle" onclick="myFunction(this)">Show Bot</button>
+    <div class="chatbox" id="chatbox">
+        <div class="chatblock">
+            <div th:each="message : ${botAnswer}">
+                <div class="message question-bot">
+                    <span th:text="${message.question}"></span>
+                </div>
+                <div class="message answer-bot">
+                    <span th:text="${message.answer}"></span>
                 </div>
             </div>
         </div>
-
-
+        <div class="input-block">
+            <form action="/chatMessage" autocomplete="off" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" required name="message" placeholder="Your message">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-
+    <div class="main-part">
+        <div class="question-group">
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>How to order some car to my country/city?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>You should need to open "Cars" page, select one and send your order to our operator</p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>Why I need to login/register on your ugly site?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>Because we don't work with unconfirmed persons</p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>Why the site is so ugly?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>Because my UI skills lower than your dignity</p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                </div>
+            </div>
+            <div class="block">
+                <div class="question">
+                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
+                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                </div>
+                <div class="answer">
+                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
+                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div th:insert="~{pagetemplate :: footer}"></div>
 
+
 </body>
+
 </html>
