@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.ParseException;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -28,9 +31,31 @@ public class PostingController {
         return "posting-page";
     }
 
+    /*
+    * Add new post to database
+     */
     @PostMapping("add")
-    public String add(@RequestParam String link, @RequestParam String mainInfo, @RequestParam String about, Map<String, Object> model) {
-        Post post = new Post(link, mainInfo, about);
+    public String add(@RequestParam String link,
+                      @RequestParam String mark,
+                      @RequestParam String modelCar,
+                      @RequestParam String color,
+                      @RequestParam String volume,
+                      @RequestParam String cost,
+                      @RequestParam String bodyType,
+                      @RequestParam String shortInfo,
+                      Map<String, Object> model) {
+
+        Double engineV = null;
+
+        try {
+            engineV = Double.parseDouble(volume);
+        } catch (NumberFormatException e) {
+            volume = volume.replace(",", ".");
+            engineV = Double.parseDouble(volume);
+        }
+
+        Integer costToInteger = Integer.parseInt(cost);
+        Post post = new Post(link, mark, modelCar, engineV, costToInteger, color, bodyType, shortInfo);
         postRepository.save(post);
         return "posting-page";
     }
@@ -38,8 +63,18 @@ public class PostingController {
     @PostMapping("/filter")
     public String filter(@RequestParam String filter, Map<String, Object> model) {
         Iterable<Post> posts;
+
         if(filter != null && !filter.isEmpty()) {
-            posts = postRepository.findByMainInfoStartsWith(filter);
+            //Capitalize model of car
+            filter = filter.toLowerCase();
+            filter = filter.replaceFirst(filter.substring(0,1), filter.substring(0,1).toUpperCase());
+
+            posts = postRepository.findByMark(filter);
+
+            if(((Collection<Post>)posts).size() == 0) {
+                model.put("empty", "Can't find " + "\"" + filter + "\". Try another mark");
+            }
+
         } else {
             posts = postRepository.findAll();
         }
@@ -48,17 +83,11 @@ public class PostingController {
     }
 
 
-    //For admin
     @PostMapping("/deletePost")
-    public String deletePost(@RequestParam String mainInfo, Map<String, Object> model) {
-        logger.info(mainInfo);
+    public String deletePost(@RequestParam String id, Map<String, Object> model) {
 
-        if(mainInfo != null && !mainInfo.isEmpty()) {
-            postRepository.deleteByMainInfo(mainInfo);
-        }
-
+        postRepository.deleteById(Long.valueOf(id));
         model.put("cars", postRepository.findAll());
-
         return "posting-page";
     }
 }
