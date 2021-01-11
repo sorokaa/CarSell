@@ -5,6 +5,8 @@ import com.example.CarSell.bot.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,13 +29,15 @@ public class ChatController {
         return "help";
     }
 
+
     @PostMapping("/chatMessage")
-    public void getMessage(@RequestParam String message, Map<String, Object> model) {
+    public String getMessage(@RequestParam String message, Map<String, Object> model) {
         String answer = bot.generateMessage(message);
 
         Message messageObj = new Message(message, answer);
         listOfMessages.add(messageObj);
 
         model.put("botAnswer", listOfMessages);
+        return "/help";
     }
 }
