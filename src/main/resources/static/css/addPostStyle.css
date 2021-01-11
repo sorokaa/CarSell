@@ -1,44 +1,56 @@
-.add-form {
-    width: 280px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-	background-color: #304040;
+input {
+    border: none;
+    outline: none;
+    background: none;
+    padding-left: 10px;
+    color: white;
+    cursor: text;
+    width: 97%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 2px 8px 2px;
+    margin: 8px 2px;
+    border-bottom: 1px solid #c9d1c8;
 }
 
 .main-part {
-    min-height: 500px;
+    padding: 30px 30%;
 }
 
-.submit-button {
-    float: right;
-	margin: 0 auto;
-	margin-right:5px;
-	color: #c9d1c8;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #04202c;
-	padding: 10px;
-	border-radius: 10px;
-	display: inline-block;
-	border: none;
-	transition: all 0.4s ease 0s;
-    
+.row {
+    padding-bottom: 20px;
 }
 
-input {
+select {
+    background-color: #333;
+    color: aliceblue;
     border: none;
-	outline: none;
-	background: none;
-	padding-left: 10px;
-	color: white;
-	cursor: text;
-    width: 97%;
-	overflow: hidden;
-	font-size: 20px;
-	padding: 8px 2px 8px 2px;
-	margin: 8px 2px;
-	border-bottom: 1px solid #c9d1c8;
+}
+
+.short-info-input {
+    background-color: #333;
+    color: white;
+    resize:none;
+}
+
+.cost-input {
+    width: 30%;
+}
+
+.model-type-select {
+    float: right;
+}
+
+.link-to-pic {
+    width: 50%;
+}
+
+.short-info-input {
+    width: 100%;
+    min-height: 100px;
+    flex-wrap: wrap;
+}
+
+.accept-button {
+    margin: 0 auto;
 }

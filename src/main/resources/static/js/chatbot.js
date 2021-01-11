@@ -7,14 +7,14 @@ function myFunction(event) {
   if (x.style.display === "block") {
     
 	x.style.display = "none";
-	document.querySelector('#bot-button-toggle').innerText = 'Show bot';
-	document.getElementById("bot-button-toggle").setAttribute('style', 'right:0px;');
+	document.querySelector('#bot-button-toggle').innerText = 'Show Bot';
+	document.getElementById("bot-button-toggle").setAttribute('style', 'transform: rotate(-90deg);right:-39px;');
 	
   } else {
 	  
 	x.style.display = "block";
-	document.querySelector('#bot-button-toggle').innerText = 'Hide bot';
-	document.getElementById("bot-button-toggle").setAttribute('style', 'bottom:50%');
+	document.querySelector('#bot-button-toggle').innerText = 'Hide Bot';
+	document.getElementById("bot-button-toggle").setAttribute('style', 'transform: rotate(-0deg);right:0');
 	
   }
 }

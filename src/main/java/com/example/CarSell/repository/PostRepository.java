@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
-    List<Post> findByMainInfoStartsWith(String mainInfo);
-    long deleteByMainInfo(String mainInfo);
+    List<Post> findByMark(String mark);
+    void deleteById(Long id);
 }
