@@ -4,25 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Help</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
     <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
-
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/helpPageStyle.css}" />
-
     <script type="text/javascript" th:src="@{/static/js/help.js}"></script>
     <script type="text/javascript" th:src="@{/static/js/chatbot.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div th:insert="~{pagetemplate :: header}"></div>
-    
     <button id="bot-button-toggle" onclick="myFunction(this)">Show Bot</button>
     <div class="chatbox" id="chatbox">
         <div class="chatblock">
@@ -111,8 +104,5 @@
         </div>
     </div>
     <div th:insert="~{pagetemplate :: footer}"></div>
-
-
 </body>
-
 </html>

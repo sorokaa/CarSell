@@ -65,3 +65,13 @@ button:hover {
 button {
     height: inherit;
 }
+
+.error-filter {
+    width: 100%;
+    text-align: center;
+}
+
+.cost {
+    float: right;
+    text-align: right;
+}

@@ -17,50 +17,54 @@
 
 <body>
 
-<div th:insert="~{pagetemplate :: header}"></div>
+    <div th:insert="~{pagetemplate :: header}"></div>
 
-<div class="main-part">
+    <div class="main-part">
 
-    <div class="row filter-cars">
-        <form action="/filter" method="post">
-            <div class="input-group mb-3">
-                
-                <input type="text" class="form-control" name="filter" placeholder="Mark of car">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">Find</button>
-                </div>
-            </div>
-        </form>
-    </div>
+        <div class="row filter-cars">
+            <form action="/filter" method="post">
+                <div class="input-group mb-3">
 
-    <div class="add-post">
-        <a th:href="@{/add-post-page}" class="add-car">Add post</a>
-    </div>
-
-    <div class="card-columns posting-group">
-        <div th:each="car : ${cars}">
-            <div class="card w-30 h-100">
-                <img th:src="${car.link}" class="card-img-top" alt="Can't found image" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'" />
-                <div class="card-body">
-                    <h5 class="card-title"><span th:text="${car.mainInfo}"></span></h5>
-                    <p class="card-text"><span th:text="${car.about}"></span></p>
-                    <button>Show</button>
-
-                    <div sec:authorize="hasAuthority('ADMIN')">
-                        <form action="/deletePost" method="post">
-                            <input hidden type="text" th:value="${car.mainInfo}" name="mainInfo">
-                            <!--> TODO -> ADD DELETE POST BUTTON <button type="submit">Delete post</button><!-->
-                        </form>
+                    <input type="text" class="form-control" name="filter" placeholder="Mark of car">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Find</button>
                     </div>
+                </div>
+            </form>
+        </div>
 
+        <div class="add-post">
+            <a th:href="@{/add-post-page}" class="add-car">Add post</a>
+        </div>
+
+        <div class="error-filter">
+            <p><span th:text="${empty}"></span></p>
+        </div>
+
+        <div class="card-columns posting-group">
+            <div th:each="car : ${cars}">
+                <div class="card w-30 h-100">
+                    <img th:src="${car.link}" class="card-img-top" alt="Can't found image" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'" />
+                    <div class="card-body">
+                        <h5 class="card-title"><span th:text="${car.mark}"></span> <span th:text="${car.model}"></span><span class="cost" th:text="${car.cost} + '$'"></span></h5>
+                        <p class="card-text"><span th:text="${car.shortInfo}"></span></p>
+                        
+                        <button>Show</button>
+                        <div sec:authorize="hasAuthority('ADMIN')">
+                            <form action="/deletePost" method="post">
+                               <input type="text" hidden name="id" th:value="${car.id}"/>
+                                <button type="submit">Delete post</button>
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
-
-<div th:insert="~{pagetemplate :: footer}"></div>
+    <div th:insert="~{pagetemplate :: footer}"></div>
 </body>
 
 </html>
