@@ -7,11 +7,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginPageStyle.css}" />
 
-    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}"  type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
 
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,46 +19,43 @@
 
 <body>
 
-<div th:insert="~{pagetemplate :: header}"></div>
+    <div th:insert="~{pagetemplate :: header}"></div>
 
-<div class="main-part">
-    <form th:action="@{/login}" method="post" class="login-box">
-        <div class="login-box">
+    <div class="main-part">
+        <form th:action="@{/login}" method="post" class="login-box">
+            <div class="login-box">
 
-            <h1>Login</h1>
+                <h1>Login</h1>
 
-            <div th:if="${param.error}">
-                <div class="alert alert-danger">
-                    Invalid username and password.
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">
+                        Invalid username and password.
+                    </div>
+                </div>
+
+                <div class="textbox">
+                    <input type="text" autocomplete="off" required="true" autofocus="true" name="username" placeholder="Username">
+                </div>
+
+                <div class="textbox">
+                    <input type="Password" autocomplete="off" name="password" required="true" placeholder="Password">
+                </div>
+
+                <div class="row bottom-block">
+                    <div class="col-md-7">
+                        <div class="account-register-link">
+                            <p>Don't have an account? <a th:href="@{/registration}">Create</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn" type="submit">Sign In</button>
+                    </div>
                 </div>
             </div>
+        </form>
+    </div>
 
-            <div th:if="${param.logout}">
-                <div class="alert alert-info">
-                    You have been logged out.
-                </div>
-            </div>
-
-            <div class="textbox">
-                <input type="text" autocomplete="off" required="true" autofocus="true" name="username" placeholder="Username">
-            </div>
-
-            <div class="textbox">
-                <input type="Password" autocomplete="off" name="password" required="true" placeholder="Password">
-            </div>
-
-            <div><input class="acceptButton" type="submit" value="Sign In" /></div>
-
-            <div class="account-register-link">
-                <p>Don't have account? <a th:href="@{/registration}">Create</a></p>
-            </div>
-
-
-        </div>
-    </form>
-</div>
-
-<div th:insert="~{pagetemplate :: footer}"></div>
+    <div th:insert="~{pagetemplate :: footer}"></div>
 
 </body>
 

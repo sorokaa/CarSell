@@ -23,10 +23,6 @@ public class MainController {
         return "main";
     }
 
-    @GetMapping("/help")
-    public String help() {
-        return "help";
-    }
 
     @GetMapping("/logout")
     public String logout() {
@@ -47,5 +43,4 @@ public class MainController {
     public String readMore() {
         return "readMore";
     }
-
 }

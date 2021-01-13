@@ -8,6 +8,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="214" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -32,8 +38,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -76,6 +85,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarSell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CarSell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.CarSell" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.LoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.testMainPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarSell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CarSell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.CarSell" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.LoginTest" />
+      <option name="METHOD_NAME" value="testMainPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarSell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CarSell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.CarSell" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.RegistrationControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationControllerTest.testCreateDuplicateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarSell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CarSell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.CarSell" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.RegistrationControllerTest" />
+      <option name="METHOD_NAME" value="testCreateDuplicateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationControllerTest.testRegistration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarSell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.CarSell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.CarSell" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CarSell.RegistrationControllerTest" />
+      <option name="METHOD_NAME" value="testRegistration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Remote" type="Remote">
       <module name="CarSell" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -93,8 +180,22 @@
     <list>
       <item itemvalue="Application.Run" />
       <item itemvalue="Application.Run v2.0" />
+      <item itemvalue="JUnit.LoginTest" />
+      <item itemvalue="JUnit.RegistrationControllerTest.testCreateDuplicateUser" />
+      <item itemvalue="JUnit.RegistrationControllerTest" />
+      <item itemvalue="JUnit.LoginTest.testMainPage" />
+      <item itemvalue="JUnit.RegistrationControllerTest.testRegistration" />
       <item itemvalue="Remote.Remote" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.RegistrationControllerTest" />
+        <item itemvalue="JUnit.RegistrationControllerTest.testRegistration" />
+        <item itemvalue="JUnit.LoginTest.testMainPage" />
+        <item itemvalue="JUnit.RegistrationControllerTest.testCreateDuplicateUser" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -112,5 +213,11 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CarSell$LoginTest_test.ic" NAME="LoginTest.test Coverage Results" MODIFIED="1610446550892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.CarSell.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CarSell$Run.ic" NAME="Run Coverage Results" MODIFIED="1610369794884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

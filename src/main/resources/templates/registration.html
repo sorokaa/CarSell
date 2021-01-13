@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
     <meta charset="UTF-8">
     <title>Registration page</title>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginPageStyle.css}"/>
-    
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginPageStyle.css}" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}"  type="image/x-icon">
-    
 
-    
+    <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
+
+
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-	<div th:insert="~{pagetemplate :: header}"></div>
-	<div th:if="${message}">
-		User exist
-	</div>
-	<div class="main-part">
-	<form th:action="@{/registration}" method="post" class="login-box">
-		<div class="login-box">
+    <div th:insert="~{pagetemplate :: header}"></div>
+    
+    <div class="main-part">
+        <form th:action="@{/registration}" method="post" class="login-box">
+            <div class="login-box">
 
-			<h1>Registration</h1>
+                <h1>Registration</h1>
+                <div class="errors" >
+                    <p><span th:text="${errors}"></span></p>
+                </div>
+                <div class="textbox">
+                    <input type="text" autocomplete="off" name="username" placeholder="Login">
+                </div>
 
-			<div class="textbox">
-				<input type="text" autocomplete="off" name="username" placeholder="Login">
-			</div>
-			
-			<div class="textbox">
-				<input type="Password" autocomplete="off" name="password" placeholder="Password">
-			</div>
-			<div><button class="acceptButton" type="submit">Register</button></div>
-		</div>
-	</form>
-</div>
+                <div class="textbox">
+                    <input type="Password" autocomplete="off" name="password" placeholder="Password">
+                </div>
+                <div class="row bottom-block justify-content-end">
+                    <div class="col-md-5">
+                        <button class="btn" type="submit">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
-	<div th:insert="~{pagetemplate :: footer}"></div>
+    <div th:insert="~{pagetemplate :: footer}"></div>
 
 </body>
+
 </html>

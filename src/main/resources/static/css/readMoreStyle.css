@@ -1,12 +1,10 @@
-h2 {
+h4 {
 	font-size: 40px;
 	text-align: center;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	margin: 0;
-	background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red, red);   -webkit-background-clip: text;
-  	color: transparent;
-  	letter-spacing: 5px;
+	letter-spacing: 5px;
 
 
 }
@@ -17,9 +15,34 @@ h2 {
 	padding: 0 0 30px 30px;
 }
 
+.main-part {
+	padding-bottom: 30px;
+}
+
 img {
 	width: 50%;
 	height: auto;
+}
+
+.first-img {
 	float: right;
 	padding-right: 30px;
+}
+
+.second-img {
+	float: left;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+@media (max-width: 1300px) {
+    .second-img, .first-img {
+    	width: 100%;
+    	padding-left: 10px;
+    	padding-right: 10px;
+    }
+
+    .main-part p {
+    	padding: 20px 10px;
+    }
 }
