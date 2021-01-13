@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/mainStyle.css}" />
     <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div th:insert="~{pagetemplate :: header}"></div>
-    
+
     <!--Nitify that admin logined-->
     <div sec:authorize="hasAuthority('ADMIN')">
         <style>
@@ -35,42 +35,41 @@
     </div>
     <div class="main-part">
        
-       <!--Welcome text-->
-        <div class="row">
-            <h4 class="col-md-12 welcome-page-head-text">Welcome to our site</h4>
-        </div>
-        
         <!--Intro text block and read more link-->
-        <div class="row read-more-block">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-12 col-md-12">
-                        <p class="welcome-page-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta laborum maiores optio quam tenetur libero maxime iure consequatur illo hic, quisquam, porro voluptas incidunt quis sapiente animi dolor, facere eligendi pariatur omnis. Impedit, sint explicabo. Impedit nostrum amet eveniet cum aperiam quod accusantium quae de
-                            bitis saepe cumque sed animi mollitia, minima quaerat molestias ducimus quasi perferendis nam voluptatem iste delectus blanditiis consectetur deleniti, quos voluptates. Optio libero eaque cumque quae! Ratione eaque laboriosam fuga sint, incidunt, facere, nihil id necessitatibus harum molestias repellat dolor eveniet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, distinctio!
-                        </p>
-                    </div>
-                    <div class="col-lg-8 col-sm-0 col-md-0 img-block">
-                        <img class="img-responsive welcome-page-img" th:src="@{/static/images/welcome-page-evo.jpg}" alt="">
-                    </div>
-                    <div class="read-more-button">
-                        <h3>Want to read additional information about us?</h3>
-                        <div class="d-flex justify-content-center">
-                            <a th:href="@{/readMore}">
-                                <button class="read-more">Read more</button></a>
-                        </div>
+        <div class="row intro">
+            <div class="row justify-content-center align-self-center intro-greeting">
+                <h4 class="col-md-12">Welcome to our site</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta laborum maiores optio quam tenetur libero maxime iure consequatur illo hic, quisquam, porro voluptas incidunt quis sapiente animi dolor, facere eligendi pariatur omnis. Impedit, sint explicabo. Impedit nostrum amet eveniet cum aperiam quod accusantium quae de
+                        bitis saepe cumque sed animi mollitia, minima quaerat molestias ducimus quasi perferendis nam voluptatem iste delectus blanditiis consectetur deleniti, quos voluptates. Optio libero eaque cumque quae! Ratione eaque laboriosam fuga sint, incidunt, facere, nihil id necessitatibus harum molestias repellat dolor eveniet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, distinctio!
+                    </p>
+
+                </div>
+                <div class="col-md-7">
+                    <img class="img-responsive welcome-page-img" th:src="@{/static/images/welcome-page-evo.jpg}" alt="">
+                </div>
+            </div>
+            <div class="row read-more">
+                <div class="col-md-12">
+                    <h3>Want to read additional information about us?</h3>
+                    <div class="d-flex justify-content-center">
+                        <a th:href="@{/readMore}">
+                            <button class="read-more-button">Read more</button></a>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
+
+
         <!--Fish-text after intro text-->
         <div class="row body-text">
             <p class="col-md-12"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum consequatur quod labore voluptate, quidem odio officiis reiciendis, minima impedit dolores deserunt reprehenderit assumenda ipsum voluptatum blanditiis accusamus, sunt obcaecati iure magni quis minus quasi eum tempora doloremque vitae? Quisquam voluptates vitae repellendus in perferendis eligendi, animi qui nostrum minus et, quibusdam doloribus, beatae minima veritatis aut nulla consectetur aperiam. Nihil nulla facilis eveniet fugit, quod esse dolores quo voluptate tempore voluptatum est sunt distinctio sequi aliquam ab ratione tenetur! Quo, rem. Exercitationem velit dolore obcaecati sint molestiae, ullam nam doloribus dolores laboriosam neque minima accusantium quia ab, voluptatem quaerat corrupti.</p>
         </div>
-        
-        
+
+
         <!--Carousel with pictures-->
         <div class="row">
             <div id="carouselPictures" class="carousel slide carousel-pic col-md-7" data-ride="carousel">
@@ -82,7 +81,7 @@
                         <img class="d-block w-100 carousel-images" src="https://www.jdmbuysell.com/wp-content/uploads/2019/06/0850859e-38df-41ad-8d80-db6be87eacdd-750x450-1.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 carousel-images" src="https://lh3.googleusercontent.com/proxy/8XfhvzMRML0whoQvcX7wK-fq6GQHp8uF-bLYChF7caztPbj90K0hIt3YxL1cNh63rzWSUtTRdt-OHznG9DDfozTVNjUJ_fW5X-qtKELnlzmEwKSY6gT3K4aDXUn49iGBnUeO_o4ZPaHxBMyB8Ga3-pvlIqsf7KFQ3mzX5PRNlKUdwOrqMolLtqnNTDF_S1raITlZSrUyyge6i6-75APdKCvnW6kWQlf_xmDgZQ" alt="Third slide">
+                        <img class="d-block w-100 carousel-images" src="https://i.pinimg.com/736x/8a/86/3e/8a863ed235e876c9fe3786099a5d4344.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselPictures" role="button" data-slide="prev">

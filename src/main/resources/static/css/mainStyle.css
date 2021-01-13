@@ -8,42 +8,38 @@
     padding: 40px;
 }
 
-.img-block {
-    padding-left: 0;
+.intro-text {
+    font-size: 1.2vw;
 }
 
 .welcome-page-img {
     width: 100%;
     height: auto;
-
-
 }
 
-.welcome-page-head-text {
-    font-size: 40px;
-    letter-spacing: 5px;
-    vertical-align: middle;
-    text-align: center;
-    padding: 20px;
-}
-
-.read-more-block {
-    padding: 20px;
-    margin: 0;
-    justify-content: space-between;
-    flex-direction: column;
-    display: flex;
-}
-
-.read-more-button {
+.intro-greeting {
     width: 100%;
 }
 
-.test {
-    margin: 0 auto;
+.intro-greeting h4 {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 5px;
 }
 
-.read-more-button h3 {
+.intro {
+    height: 100vh;
+    padding: 0 20px 20px 20px;
+    margin: 0;
+    justify-content: space-between;
+    display: flex;
+}
+
+.read-more {
+    width: 100%;
+}
+
+.read-more h3 {
     width: 100%;
     text-align: center;
 }
@@ -62,12 +58,6 @@
     margin: 0;
 }
 
-
-.read-more:hover {
-    box-shadow: inset 400px 0 0 0 #04202c;
-}
-
-
 .carousel-inner > .carousel-item {
     height: 400px !important;
 
@@ -83,16 +73,9 @@
 
 
 .carousel-images {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(20% 0, 100% 0%, 80% 100%, 0% 100%);
+
 
 }
 
-@media (max-width: 1300px) {
-    img {
-        display: none;
-    }
-
-    .welcome-page-text {
-        width: 100%;
-    }
-}
+@media (max-width: 1300px) {}

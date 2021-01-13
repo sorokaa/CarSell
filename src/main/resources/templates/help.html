@@ -17,28 +17,6 @@
 <body>
     <div th:insert="~{pagetemplate :: header}"></div>
     <button id="bot-button-toggle" onclick="myFunction(this)">Show Bot</button>
-    <div class="chatbox" id="chatbox">
-        <div class="chatblock">
-            <div th:each="message : ${botAnswer}">
-                <div class="message question-bot">
-                    <span th:text="${message.question}"></span>
-                </div>
-                <div class="message answer-bot">
-                    <span th:text="${message.answer}"></span>
-                </div>
-            </div>
-        </div>
-        <div class="input-block">
-            <form action="/chatMessage" autocomplete="off" method="post">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" required name="message" placeholder="Your message">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">Send</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
     <div class="main-part">
         <div class="question-group">
             <div class="block">
