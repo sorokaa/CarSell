@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>Login page</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginPageStyle.css}" />
-
     <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
-
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -41,14 +36,14 @@
                     <input type="Password" autocomplete="off" name="password" required="true" placeholder="Password">
                 </div>
 
-                <div class="row bottom-block">
+                <div class="row justify-content-center align-self-center bottom-block">
                     <div class="col-md-7">
                         <div class="account-register-link">
-                            <p>Don't have an account? <a th:href="@{/registration}">Create</a></p>
+                            Don't have an account? <a th:href="@{/registration}">Create</a>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn" type="submit">Sign In</button>
+                    <div class="col-md-5">
+                        <button class="btn-sign-in" type="submit">Sign In</button>
                     </div>
                 </div>
             </div>

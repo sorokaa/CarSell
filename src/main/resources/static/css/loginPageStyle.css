@@ -1,49 +1,48 @@
-
 body {
-	margin: 0;
-	padding: 0;
-	background-image: url('../images/back.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 1920px auto;
-	min-height: 1000px;
-    
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/back.jpg');
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 1920px auto;
 }
 
 .main-part {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 
 .login-box {
-	width: 280px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-	background-color: #304040;
+    width: 280px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #304040;
 }
 
 .login-box h1 {
-	margin-left: 15px;
-	float: left;
-	font-size: 25px;
-	border-bottom: 4px solid;
-	margin-bottom: 25px;
-	padding: 13px 0;
-	color: #c9d1c8;
+    margin-left: 15px;
+    float: left;
+    font-size: 25px;
+    border-bottom: 2px solid;
+    margin-bottom: 25px;
+    padding-top: 13px;
+    padding-bottom: 3px;
+    color: #c9d1c8;
 }
 
 .account-register-link a {
-    float: right;
     color: #2e8857;
     text-decoration: none;
 }
 
 .account-register-link {
-    text-align: right;
-    font-size: 11px;
+    text-align: left;
+    font-size: 12px;
     flex-wrap: wrap;
 }
 
@@ -51,36 +50,32 @@ body {
     margin: 15px 0;
 }
 
-
 .textbox {
-	width: 97%;
-	overflow: hidden;
-	font-size: 17px;
-	padding: 8px 2px 8px 2px;
-	margin: 8px 2px;
-	border-bottom: 1px solid #c9d1c8;
+    width: 95%;
+    overflow: hidden;
+    font-size: 17px;
+    padding: 8px 2px 8px 2px;
+    margin: 8px 5px;
+    border-bottom: 1px solid #c9d1c8;
 }
 
 .textbox input {
-	border: none;
-	outline: none;
-	background: none;
-	padding-left: 10px;
-	color: white;
-	cursor: text;
+    border: none;
+    outline: none;
+    background: none;
+    padding-left: 10px;
+    color: white;
+    cursor: text;
 }
 
 
-.btn {
-    padding-right: 10px;
-
+.btn-sign-in {
+    font-size: 12px;
+    width: 100%;
+    padding: 7px 10px;
+    margin: 0;    
 }
 
-.acceptButton:hover {
-	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	transition: all 0.4s ease 0s;
+.btn-register {
+    margin-right: 10px;
 }
-
-
