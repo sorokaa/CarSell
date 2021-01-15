@@ -70,3 +70,13 @@ button {
     float: right;
     text-align: right;
 }
+
+button { 
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.delete-post-btn {
+    color: black;
+    border-color: black;
+}

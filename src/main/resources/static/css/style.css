@@ -44,7 +44,7 @@ body {
     margin: 0 auto;
     background-color: #304040;
     color: white;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 button {
@@ -100,4 +100,10 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+@media (max-width: 1000px) {
+    .main-part {
+        width: 100%;
+    }
 }

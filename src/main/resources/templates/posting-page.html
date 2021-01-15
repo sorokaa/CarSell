@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/stylePosting.css}" />
     <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,17 +51,20 @@
                     <div class="card w-30 h-100">
                         <img th:src="${car.link}" class="card-img-top" alt="Can't found image" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'" />
                         <div class="card-body">
-                            <h5 class="card-title"><span th:text="${car.mark}"></span>
+                            <h5 class="card-title">
+                                <span th:text="${car.mark}"></span>
                                 <span th:text="${car.model}"></span>
                                 <span class="cost" th:text="${car.cost} + '$'"></span>
                             </h5>
                             <p class="card-text"><span th:text="${car.shortInfo}"></span></p>
-                            <button class="btn-show">Show</button>
-                            <div sec:authorize="hasAuthority('ADMIN')">
-                                <form action="/deletePost" method="post">
-                                    <input type="text" hidden name="id" th:value="${car.id}" />
-                                    <button type="submit">Delete post</button>
-                                </form>
+                            <div class="row">
+                                <button class="col-md-3 btn-show">Show</button>
+                                <div class="col-md-5" sec:authorize="hasAuthority('ADMIN')">
+                                    <form action="/deletePost" method="post">
+                                        <input type="text" hidden name="id" th:value="${car.id}" />
+                                        <button class="delete-post-btn" type="submit">Delete post</button>
+                                    </form>
+                                </div>
                             </div>
 
                         </div>

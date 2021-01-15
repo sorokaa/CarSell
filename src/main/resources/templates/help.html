@@ -12,75 +12,73 @@
     <script type="text/javascript" th:src="@{/static/js/help.js}"></script>
     <script type="text/javascript" th:src="@{/static/js/chatbot.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div th:insert="~{pagetemplate :: header}"></div>
-    <button id="bot-button-toggle" onclick="myFunction(this)">Show Bot</button>
     <div class="main-part">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Frequently Asked Questions</h3>
+            </div>
+        </div>
         <div class="question-group">
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>How to order some car to my country/city?</h4>
+                    <h4>Q: How to order some car to my country/city?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>You should need to open "Cars" page, select one and send your order to our operator</p>
+                    <p>A: You should need to open "Cars" page, select one and send your order to our operator</p>
                 </div>
             </div>
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>Why I need to login/register on your ugly site?</h4>
+                    <h4>Q: Why I need to login/register on your ugly site?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>Because we don't work with unconfirmed persons</p>
+                    <p>A: Because we don't work with unconfirmed persons</p>
                 </div>
             </div>
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>Why the site is so ugly?</h4>
+                    <h4>Q: Why the site is so ugly?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>Because my UI skills lower than your dignity</p>
+                    <p>A: Because my UI skills lower than your dignity</p>
                 </div>
             </div>
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                    <h4>Q: How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                    <p>A: Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
                 </div>
             </div>
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                    <h4>Q: How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                    <p>A: Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
                 </div>
             </div>
             <div class="block">
                 <div class="question">
-                    <img class="question-mark-img" th:src="@{/static/images/help/question-image.png}" alt="">
-                    <h4>How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
+                    <h4>Q: How to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, exercitationem?</h4>
                 </div>
                 <div class="answer">
-                    <img class="answer-img" th:src="@{/static/images/help/answer-image.png}" alt="">
-                    <p>Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
+                    <p>A: Just make Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quas!</p>
                 </div>
             </div>
+        </div>
+        <div class="send-question">
+            <h4>Do you have another question?</h4>
+            <p>Write to my <a href="mailto:sasha20999@outlook.com">MAIL</a> and I'll answer you soon!</p>
         </div>
     </div>
     <div th:insert="~{pagetemplate :: footer}"></div>
 </body>
+
 </html>
