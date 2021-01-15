@@ -19,7 +19,7 @@
 <body>
     <div th:insert="~{pagetemplate :: header}"></div>
 
-    <!--Nitify that admin logined-->
+    <!--Notify that admin logined-->
     <div sec:authorize="hasAuthority('ADMIN')">
         <style>
             .admin-notify {
