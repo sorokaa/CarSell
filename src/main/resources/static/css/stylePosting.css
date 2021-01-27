@@ -48,6 +48,7 @@ button {
 .btn-show {
     color: black;
     border-color: black;
+    max-width: 100%;
 }
 
 

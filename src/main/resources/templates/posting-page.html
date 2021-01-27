@@ -57,8 +57,12 @@
                                 <span class="cost" th:text="${car.cost} + '$'"></span>
                             </h5>
                             <p class="card-text"><span th:text="${car.shortInfo}"></span></p>
+
                             <div class="row">
-                                <button class="col-md-3 btn-show">Show</button>
+                                <form action="/showCar" method="get">
+                                    <input type="text" hidden name="id" th:value="${car.id}" />
+                                    <button class="col-md-3 btn-show" type="submit">Show</button>
+                                </form>
                                 <div class="col-md-5" sec:authorize="hasAuthority('ADMIN')">
                                     <form action="/deletePost" method="post">
                                         <input type="text" hidden name="id" th:value="${car.id}" />
