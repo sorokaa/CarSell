@@ -10,11 +10,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Random;
-
+/*
+* Simple POJO, which generate HTML page via post template
+*
+* */
 public class GenerateHtml {
 
     private static Logger logger = LoggerFactory.getLogger(GenerateHtml.class);
 
+    /*
+    * Recieve a post object and try to create file
+    * File name create by next formula: <mark>#<model>#<id>.html
+    *
+    * Return object of file
+     */
 
     private static File createHtml (Post post) {
         try {
@@ -37,6 +46,12 @@ public class GenerateHtml {
         }
     }
 
+    /*
+    * Recieve posts object, find file on post folder and try to delete
+    *
+    * Return boolean value
+     */
+
     public static boolean deletePage(@NotNull Post post) {
         String mark = post.getMark();
         String model = post.getModel();
@@ -45,8 +60,13 @@ public class GenerateHtml {
         return file.delete();
     }
 
+    /*
+    * Entry point to generate file
+    *
+    * Create file and fill text from postTemplate.html
+     */
+
     public static void generatePage(@NotNull Post post) {
-        Random randomNumber = new Random();
 
         Path pathToTemplate = Path.of("src/main/resources/templates/post/postTemplate/postTemplate.html");
         String fileText = "";
@@ -58,17 +78,9 @@ public class GenerateHtml {
             return;
         }
 
-        /*fileText = fileText.replaceAll("#TITLE#", post.getMark() + " " +
+        fileText = fileText.replaceAll("#TITLE#", post.getMark() + " " +
                                                                    post.getModel());
-        fileText = fileText.replace("#LINK#", post.getLink());
-        fileText = fileText.replace("#MARK#", post.getMark());
-        fileText = fileText.replace("#MODEL#", post.getModel());
-        fileText = fileText.replace("#COLOR#", post.getColor());
-        fileText = fileText.replace("#COST#", post.getCost().toString());
-        fileText = fileText.replace("#ENGINE#", post.getEngineVolume().toString());
-        fileText = fileText.replace("#INFO#", post.getShortInfo());
 
-*/
         File newFile = createHtml(post);
 
         if(newFile == null) {
