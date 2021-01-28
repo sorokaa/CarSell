@@ -3,6 +3,7 @@ package com.example.CarSell.controller;
 import com.example.CarSell.POJO.GenerateHtml;
 import com.example.CarSell.domain.Post;
 import com.example.CarSell.repository.PostRepository;
+import org.dom4j.rule.Mode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +70,9 @@ public class PostingController {
         Iterable<Post> posts;
 
         if(filter != null && !filter.isEmpty()) {
-            //Capitalize model of car
+            /*
+                Capitalize model of car
+             */
             filter = filter.toLowerCase();
             filter = filter.replaceFirst(filter.substring(0,1), filter.substring(0,1).toUpperCase());
 
@@ -85,33 +88,40 @@ public class PostingController {
         return "posting-page";
     }
 
-    @GetMapping("showCar")
-    public String showCar(@RequestParam String id) {
-        logger.info("Try to show a car with id" + id);
-        Optional<Post> post = postRepository.findById(Long.valueOf(id));
+    @GetMapping("/showCar/{id}")
+    public String showCar(@PathVariable("id") Long id, Map<String, Object> model) {
 
-        if(!post.isPresent()) {
+        logger.info("Try to show a car with id" + id);
+        Optional<Post> post = postRepository.findById(id);
+
+        if(post.isEmpty()) {
             logger.error("Can't find car with id " + id);
         }
 
-        String query = "post/" + post.get().getMark() + "#"
-                + post.get().getModel() + "#"
-                + id + ".html";
-        logger.info(query);
+        model.put("car", post.get());
+
         return "post/" + post.get().getMark() + "#"
                         + post.get().getModel() + "#"
                         + id + ".html";
     }
 
+    @GetMapping("showCar")
+    public ModelAndView show(@RequestParam String id) {
+        logger.info("Try open " + id + " post");
+        return new ModelAndView("redirect:/showCar/" + id);
+    }
+
     @PostMapping("/deletePost")
     public String deletePost(@RequestParam String id, Map<String, Object> model) {
         Optional<Post> post = postRepository.findById(Long.valueOf(id));
+
         if(!GenerateHtml.deletePage(post.get())) {
-            model.put("error", "Can't remove car");
+            model.put("error", "Can't remove car"); //TODO
             return "posting-page";
         }
         postRepository.deleteById(Long.valueOf(id));
-        model.put("cars", postRepository.findAll());
+        Iterable<Post> cars = postRepository.findAll();
+        model.put("cars", cars);
         return "posting-page";
     }
 }

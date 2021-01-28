@@ -1,2 +1,18 @@
-.img {
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.post-row {
+    padding: 30px;
+}
+
+.buy-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.buy-button button {
+    margin: 0;
 }
