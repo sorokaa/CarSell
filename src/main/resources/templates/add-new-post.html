@@ -23,20 +23,13 @@
     <div class="main-part">
         <div sec:authorize="isAuthenticated()">
             <div class="add-form">
-                <form th:action="@{/add}" method="post">
+                <form th:action="@{/add}" method="post" enctype="multipart/form-data">
                     <div class="row">
-                        <input class="col-md-6 link-to-pic" autocomplete="off" name="link" type="text" placeholder="Link to picture" />
+                        <input type="file" name="file">
                         <input class="col-md-4 offset-2 float-right cost-input" type="number" placeholder="Cost($)" name="cost" />
                     </div>
                     <div class="row">
-                        <select class="col-md-5 mdb-select md-form" name="mark">
-                            <option value="" disabled selected>Mark</option>
-                            <option value="Nissan">Nissan</option>
-                            <option value="Toyota">Toyota</option>
-                            <option value="Mitsubishi">Mitsubishi</option>
-                            <option value="Dodge">Dodge</option>
-                        </select>
-
+                        <input class="col-md-5" type="text" name="mark" placeholder="Mark" />
                         <input class="col-md-5 offset-2 model-input" autocomplete="off" type="text" name="modelCar" placeholder="Model" />
 
                     </div>

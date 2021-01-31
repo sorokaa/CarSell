@@ -7,16 +7,17 @@ import org.dom4j.rule.Mode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class PostingController {
@@ -24,10 +25,14 @@ public class PostingController {
     @Autowired
     private PostRepository postRepository;
 
+    @Value("${upload.path}")
+    private String uploadPath;
+
     private Logger logger = LoggerFactory.getLogger(PostingController.class);
 
     @GetMapping("/posting-page")
     public String carsPage(Map<String, Object> model) {
+        List<Post> cars = postRepository.findAll();
         Iterable<Post> all = postRepository.findAll();
         model.put("cars", all);
         return "posting-page";
@@ -37,7 +42,7 @@ public class PostingController {
     * Add new post to database
      */
     @PostMapping("add")
-    public String add(@RequestParam String link,
+    public String add(@RequestParam("file") MultipartFile file,
                       @RequestParam String mark,
                       @RequestParam String modelCar,
                       @RequestParam String color,
@@ -48,6 +53,7 @@ public class PostingController {
                       Map<String, Object> model) {
 
         Double engineV = null;
+        logger.info(uploadPath);
 
         try {
             engineV = Double.parseDouble(volume);
@@ -57,7 +63,22 @@ public class PostingController {
         }
 
         Integer costToInteger = Integer.parseInt(cost);
-        Post post = new Post(link, mark, modelCar, engineV, costToInteger, color, bodyType, shortInfo);
+        Post post = new Post("", mark, modelCar, engineV, costToInteger, color, bodyType, shortInfo);
+        if(file != null) {
+            File uploadDir = new File(uploadPath);
+            if(!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+            String uuid = UUID.randomUUID().toString();
+            String result = uuid + "." + file.getOriginalFilename();
+            try {
+                file.transferTo(new File(uploadPath + "/" + result));
+            } catch (IOException exp) {
+                logger.info("Can't create file");
+                return "posting-page";
+            }
+            post.setFilename(result);
+        }
         postRepository.save(post);
 
         GenerateHtml.generatePage(post);
