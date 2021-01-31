@@ -11,7 +11,7 @@
     <div class="main-part">
         <div class="row post-row">
             <div class="col-md-8">
-                <img class="img-responsive" th:src="${car.link}" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'">
+                <img class="img-responsive" th:src="@{/img/{filename}(filename = ${car.filename})}" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'">
             </div>
             <div class="col-md-4">
                 <h3><span th:text="${car.mark}"></span> <span th:text="${car.model}"></span></h3>

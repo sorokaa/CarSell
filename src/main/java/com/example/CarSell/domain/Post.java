@@ -1,7 +1,5 @@
 package com.example.CarSell.domain;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +12,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
-    private String link;
+    private String filename;
 
     private String mark;
     private String model;
@@ -31,8 +28,8 @@ public class Post {
 
     public Post() {}
 
-    public Post(String link, String mark, String model, Double engineVolume, Integer cost, String color, String bodyType, String shortInfo) {
-        this.link = link;
+    public Post(String filename, String mark, String model, Double engineVolume, Integer cost, String color, String bodyType, String shortInfo) {
+        this.filename = filename;
         this.mark = mark;
         this.model = model;
         this.engineVolume = engineVolume;
@@ -50,12 +47,12 @@ public class Post {
         this.id = id;
     }
 
-    public String getLink() {
-        return link;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getMark() {
@@ -113,4 +110,5 @@ public class Post {
     public void setShortInfo(String shortInfo) {
         this.shortInfo = shortInfo;
     }
+
 }
