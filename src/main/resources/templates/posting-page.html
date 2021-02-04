@@ -49,7 +49,7 @@
             <div class="card-columns posting-group">
                 <div th:each="car : ${cars}">
                     <div class="card w-30 h-100">
-                        <img th:src="${car.link}" class="card-img-top" alt="Can't found image" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'" />
+                        <img th:src="@{/img/{filename}(filename = ${car.filename})}" class="card-img-top" alt="Can't found image" th:onerror="this.src='https://tahoban.ru/wp-content/themes/consultix/images/no-image-found-360x250.png'" />
                         <div class="card-body">
                             <h5 class="card-title">
                                 <span th:text="${car.mark}"></span>
