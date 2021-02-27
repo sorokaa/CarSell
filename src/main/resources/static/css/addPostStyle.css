@@ -13,6 +13,37 @@ input {
     border-bottom: 1px solid #c9d1c8;
 }
 
+.file-input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.mark-input, .model-input {
+    margin-left: 10px;
+}
+
+.file-input + label {
+    padding: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.label-cost {
+    margin: 0;
+    display: block;
+    vertical-align: middle;
+    text-align: right;
+}
+
 .main-part {
     padding: 30px 30%;
 }
@@ -33,9 +64,6 @@ select {
     resize:none;
 }
 
-.cost-input {
-    width: 30%;
-}
 
 .model-type-select {
     float: right;

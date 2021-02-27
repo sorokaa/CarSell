@@ -9,12 +9,9 @@
 }
 
 .intro-text {
-    font-size: 1.2vw;
-}
-
-.welcome-page-img {
-    width: 100%;
-    height: auto;
+    font-size: 1.6vw;
+    color: white;
+    font-weight: bolder;
 }
 
 .intro-greeting {
@@ -22,6 +19,8 @@
 }
 
 .intro-greeting h4 {
+    color: white;
+    font-weight: bold;
     font-size: 40px;
     text-align: center;
     letter-spacing: 5px;
@@ -33,6 +32,9 @@
     margin: 0;
     justify-content: space-between;
     display: flex;
+    background-image: url("/static/images/welcome-page-evo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .read-more {
@@ -42,6 +44,8 @@
 .read-more h3 {
     width: 100%;
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 .contacts {
