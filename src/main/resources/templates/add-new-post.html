@@ -6,14 +6,13 @@
     <title>Car Selling</title>
 
     <script th:src="@{/static/assets/js/main.js}"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/addPostStyle.css}" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" th:href="@{/static/images/pixil-layer-Background.png}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/addPostStyle.css}" />
 
 </head>
 
@@ -24,15 +23,21 @@
         <div sec:authorize="isAuthenticated()">
             <div class="add-form">
                 <form th:action="@{/add}" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        <input type="file" name="file">
-                        <input class="col-md-4 offset-2 float-right cost-input" type="number" placeholder="Cost($)" name="cost" />
+                    <div class="d-flex flex-row">
+                        <input type="file" id="file" name="file" class="file-input col-md-0">
+                        <label for="file" class="col-md-5">Choose a picture</label>
+                        <div class="d-flex flex-column justify-content-end">
+                            <input class="p-2 mark-input" type="text" name="mark" placeholder="Mark" />
+                            <input class="p-2 model-input" autocomplete="off" type="text" name="modelCar" placeholder="Model" />
+                        </div>
                     </div>
-                    <div class="row">
-                        <input class="col-md-5" type="text" name="mark" placeholder="Mark" />
-                        <input class="col-md-5 offset-2 model-input" autocomplete="off" type="text" name="modelCar" placeholder="Model" />
+                        <div class="form-group d-flex flex-row">
+                            <label for="inputPassword" class="p-3 label-cost justify-content-end">Cost of car: </label>
+                            <div class="p-7">
+                              <input type="number" class="cost-input" id="inputPassword" placeholder="Password">
+                            </div>
+                          </div>
 
-                    </div>
                     <div class="row">
                         <input class="col-md-6" type="number" placeholder="Engine Volume" name="volume" />
                         <select class="col-md-5 offset-1 mdb-select md-form model-type-select" name="bodyType">
